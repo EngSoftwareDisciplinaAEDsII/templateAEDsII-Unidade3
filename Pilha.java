@@ -40,6 +40,21 @@ public class Pilha<E> {
 
 	}
 
+	public void imprimir() throws IllegalStateException {
+
+		Celula<E> aux;
+
+		if (vazia())
+			throw new IllegalStateException("Pilha vazia!");
+		else {
+			aux = topo;
+			while (aux != fundo) {
+				System.out.println(aux.getItem().toString());
+				aux = aux.getProximo();
+			}
+		}
+	}
+
 	
 	public Pilha<E> subPilha(int numItens) {
 		
